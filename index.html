@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="description" content="按目的地整理的个人旅行相册，可按地区、地图与拍摄时间浏览。">
+  <meta name="theme-color" content="#0d1428">
+  <title>拐拐的流浪日记</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="theme.css">
+  <link rel="stylesheet" href="archive.css">
+  <script defer src="data.js"></script>
+  <script defer src="archive.js"></script>
+  <script defer src="home.js"></script>
+</head>
+<body class="page-home">
+  <div class="progress" id="progress" aria-hidden="true"></div>
+  <header class="nav" id="nav">
+    <a class="brand" href="index.html" data-site-title>拐拐的流浪日记</a>
+    <nav class="nav-links" aria-label="主导航">
+      <a href="#trips">相册</a>
+      <a href="#map">地图</a>
+      <a href="#timeline">时间轴</a>
+      <a href="#about">关于</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hhero" id="top">
+      <img class="hhero-img" id="hheroImg" alt="" fetchpriority="high">
+      <div class="hhero-veil"></div>
+      <div class="hhero-copy">
+        <p class="eyebrow">TRAVEL ARCHIVE</p>
+        <h1 data-site-title>拐拐的流浪日记</h1>
+        <p class="sub">一路走来，一站一册</p>
+        <a class="hero-action" href="#trips">浏览相册</a>
+      </div>
+      <div class="hhero-foot">
+        <div class="hero-facts" id="hFacts"></div>
+        <a class="hero-credit" id="heroCredit"></a>
+      </div>
+    </section>
+
+    <section class="section sec-trips" id="trips">
+      <header class="section-head">
+        <div class="sh-left"><span class="sec-en">ALBUMS</span></div>
+        <div class="sh-right">
+          <h2>旅行目录</h2>
+          <p class="lead">按目的地翻看相册，或用地区和地名找到想看的照片。</p>
+        </div>
+      </header>
+      <div class="directory-tools">
+        <div class="filters" id="regionFilters" aria-label="按地区筛选"></div>
+        <label class="album-search">搜索地名<input type="search" id="albumSearch" placeholder="如 九寨沟、福建"></label>
+      </div>
+      <p class="sr-only" id="tripStatus" aria-live="polite"></p>
+      <div class="trip-grid" id="tripGrid"></div>
+      <p id="tripEmpty" class="empty-note" hidden>没有匹配的相册。试试其他地名或地区。</p>
+      <button class="more-btn" id="moreTrips" type="button"></button>
+    </section>
+
+    <section class="section sec-map" id="map">
+      <header class="section-head">
+        <div class="sh-left"><span class="sec-en">MAP</span></div>
+        <div class="sh-right">
+          <h2>走过的地方</h2>
+          <p class="lead">选择地图标记或列表里的地点，即可打开对应相册。点位为目的地示意。</p>
+        </div>
+      </header>
+      <div class="map-wrap">
+        <div class="map-panel">
+          <svg id="mapSvg" viewBox="0 0 1000 590" role="group" aria-label="旅行目的地示意地图"></svg>
+          <span class="map-scale">经纬度示意</span>
+        </div>
+        <aside class="map-list" id="mapList" aria-label="目的地相册列表"></aside>
+      </div>
+    </section>
+
+    <section class="section sec-timeline" id="timeline">
+      <header class="section-head">
+        <div class="sh-left"><span class="sec-en">TIMELINE</span></div>
+        <div class="sh-right">
+          <h2>拍摄时间轴</h2>
+          <p class="lead">按各相册中最近的已知拍摄日期排列。</p>
+        </div>
+      </header>
+      <ul class="tl" id="tl"></ul>
+      <button class="more-btn" id="moreDates" type="button"></button>
+    </section>
+
+    <section class="section sec-about" id="about">
+      <header class="section-head">
+        <div class="sh-left"><span class="sec-en">ABOUT</span></div>
+        <div class="sh-right">
+          <h2>关于相册</h2>
+          <p class="lead">相册沿用原来的地点分组。较大的相册按拍摄月份翻阅，拍摄时间缺失的照片标为「日期待考」。</p>
+        </div>
+      </header>
+      <footer class="colophon">
+        <div class="co-item"><b data-site-title>拐拐的流浪日记</b><span id="coArchive"></span></div>
+        <div class="co-item"><b>开源模板</b><a href="https://github.com/lLIMOU66/xinjiang-album">xinjiang-album · MIT</a></div>
+        <a class="to-top" href="#top">回到顶部</a>
+      </footer>
+    </section>
+  </main>
+  <noscript>请启用 JavaScript 浏览相册。</noscript>
+</body>
+</html>
